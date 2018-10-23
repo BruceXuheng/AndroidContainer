@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:orientation="vertical"
+    tools:context="com.study.test.testapplication.acty.StudySqliteDBActy">
+
+    <Button
+        android:id="@+id/create_db_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="创建数据库"
+        />
+
+    <Button
+        android:id="@+id/insert_db_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="添加数据"
+        />
+    <Button
+        android:id="@+id/update_db_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查看数据 Log日志查看"
+        />
+    <Button
+        android:id="@+id/tiaozhuan_db_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="跳转"
+        />
+</LinearLayout>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.study.test.testapplication">
+
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
+    <!-- 震动权限 -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".acty.NavgationActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".acty.StudyRecyclerActivity">
+        </activity>
+        <activity android:name=".acty.StudyListViewActivity">
+        </activity>
+        <activity android:name=".acty.ChatRecyclerViewActivity">
+        </activity>
+        <activity android:name=".acty.StudyRecyclerViewMutilActivity">
+        </activity>
+        <activity android:name=".acty.MainFragmentActivity">
+        </activity>
+        <activity android:name=".fragment.news.NewsContentActivity">
+        </activity>
+        <activity android:name=".receiver.BroadCastActivity">
+        </activity>
+
+        <receiver
+            android:name=".receiver.BootCompleteReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.study.test.testapplication.receiver.MY"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".receiver.AnthorBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="100">
+                <action android:name="com.study.test.testapplication.receiver.MY"/>
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".acty.FileSaveActivity">
+        </activity>
+        <activity android:name=".acty.StudySqliteDBActy">
+        </activity>
+        <activity android:name=".acty.PermissionActivity">
+        </activity>
+        <activity android:name=".acty.StudyContentResolverActy">
+        </activity>
+
+        <provider
+            android:name=".contentprovider.MyContentProvider"
+            android:authorities="com.study.test.testapplication.provider"
+            android:enabled="true"
+            android:exported="true">
+        </provider>
+
+        <activity android:name=".notification.StudyNotificationActy">
+        </activity>
+        <activity android:name=".acty.StudyPhotoActivity">
+        </activity>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.study.test.testapplication.fileprovider"
+            android:enabled="false"
+            android:exported="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+
+        <activity android:name=".acty.StudyWebViewActivity">
+        </activity>
+
+        <service
+            android:name=".service.MyService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+
+        <activity android:name=".acty.StudyServiceActy">
+
+        </activity>
+
+        <service
+            android:name=".service.MyIntentService"
+            android:exported="false">
+        </service>
+        <service
+            android:name=".servicedemo.DownLoadService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+
+        <activity android:name=".servicedemo.DownActivity">
+
+        </activity>
+    </application>
+
+</manifest>

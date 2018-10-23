@@ -1,0 +1,10 @@
+<resources>
+    <!--APP系统String-->
+    <string name="app_name">云上课</string>
+
+    <!--Title-->
+    <string name="title_a">首页</string>
+    <string name="title_b">我的</string>
+    <string name="title_c">设置</string>
+
+</resources>
