@@ -1,18 +1,16 @@
 package com.study.test.testapplication.servicedemo;
 
-import android.net.sip.SipAudioCall;
 import android.os.AsyncTask;
 import android.os.Environment;
-
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.RandomAccessFile;
-import java.net.ContentHandler;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 
 /**
