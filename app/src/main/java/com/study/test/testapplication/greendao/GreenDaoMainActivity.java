@@ -58,6 +58,7 @@ public class GreenDaoMainActivity extends AppCompatActivity {
                 SQLiteUtils.getInstance().updateContacts(new User(null, "name1221", "sex", "22", "email"));
                 break;
             case R.id.green_delete_btn:
+                SQLiteUtils.getInstance().deletewhereAge(new User());
                 break;
         }
     }

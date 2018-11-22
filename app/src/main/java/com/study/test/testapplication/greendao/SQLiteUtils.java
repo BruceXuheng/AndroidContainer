@@ -12,8 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
-
 public class SQLiteUtils {
     private static SQLiteUtils instance;
     private UserDao userEntityDao;
@@ -53,8 +51,15 @@ public class SQLiteUtils {
 
     //修改
     public void updateContacts(User testBean) {
-        daoSession.getDatabase().execSQL("update user set ? where ?",new Object[]{});
-//        userEntityDao.update(testBean);
+        userEntityDao.update(testBean);
+    }
+
+    /**
+     * 条件搜索
+     * @param user
+     */
+    public void updateUser(User user){
+        daoSession.getDatabase().execSQL("update user set age=? where age=?and email=?",new Object[]{user.getAge(),"1","email"});
     }
 
     //查询所有
@@ -74,6 +79,11 @@ public class SQLiteUtils {
     public void deleteAllContact() {
 
         userEntityDao.deleteAll();
+    }
+
+    //删除表中内容
+    public void deletewhereAge(User user) {
+        daoSession.getDatabase().execSQL("delete from user where age=?",new Object[]{"10"});
     }
 
     /**
