@@ -1,9 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".greendao.GreenDaoMainActivity">
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/green_insert_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="dbOnClick"
+        android:text="插入数据" />
+
+    <Button
+        android:id="@+id/green_update_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="dbOnClick"
+        android:text="修改数据"
+
+        />
+
+    <Button
+        android:id="@+id/green_delete_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="dbOnClick"
+        android:text="删除数据"
+
+        />
+
+    <Button
+        android:id="@+id/green_query_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="dbOnClick"
+        android:text="查询数据"
+
+        />
+
+    <TextView
+        android:id="@+id/green_dao_acty_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        />
+
+</LinearLayout>
