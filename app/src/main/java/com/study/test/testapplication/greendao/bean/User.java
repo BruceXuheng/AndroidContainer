@@ -31,15 +31,19 @@ public class User {
     private String sex;
     private String age;
     private String email;
+    private String des;
+    private String hight;
 
-    @Generated(hash = 1028900582)
-    public User(Long id, @NotNull String name, String sex, String age,
-            String email) {
+    @Generated(hash = 1093552816)
+    public User(Long id, @NotNull String name, String sex, String age, String email,
+            String des, String hight) {
         this.id = id;
         this.name = name;
         this.sex = sex;
         this.age = age;
         this.email = email;
+        this.des = des;
+        this.hight = hight;
     }
     @Generated(hash = 586692638)
     public User() {
@@ -83,6 +87,21 @@ public class User {
                 ", sex='" + sex + '\'' +
                 ", age='" + age + '\'' +
                 ", email='" + email + '\'' +
+                ", des='" + des + '\'' +
+                ", hight='" + hight + '\'' +
                 '}';
+    }
+
+    public String getDes() {
+        return this.des;
+    }
+    public void setDes(String des) {
+        this.des = des;
+    }
+    public String getHight() {
+        return this.hight;
+    }
+    public void setHight(String hight) {
+        this.hight = hight;
     }
 }

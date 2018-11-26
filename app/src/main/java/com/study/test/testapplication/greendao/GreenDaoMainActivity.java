@@ -15,6 +15,7 @@ public class GreenDaoMainActivity extends AppCompatActivity {
 
     private DaoSession daoSession;
     private TextView tv;
+    private String age="0";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,7 @@ public class GreenDaoMainActivity extends AppCompatActivity {
 
 
     public void insertUserMessage() {
-        User user = new User(null, "name", "sex", "10", "email");
+        User user = new User(null, "name", "sex", "10", "email","123","10");
         daoSession.insert(user);
     }
 
@@ -43,22 +44,25 @@ public class GreenDaoMainActivity extends AppCompatActivity {
     public void dbOnClick(View view) {
         switch (view.getId()) {
             case R.id.green_insert_btn:
-                SQLiteUtils.getInstance().addUser(new User(null, "name", "sex", "10", "email"));
+                SQLiteUtils.getInstance().addUser(new User(null, "name", "sex", age, "email","des","10"));
+                age = String.valueOf(Integer.valueOf(age)+1);
                 break;
             case R.id.green_query_btn:
 //                List<User> list = SQLiteUtils.getInstance().selectWhereAge("10");
                 List<User> list = SQLiteUtils.getInstance().selectAllContacts();
                 StringBuffer sb = new StringBuffer();
+
                 for (User user : list) {
                     sb.append(user.toString()+"\n");
                 }
+                tv.setText("");
                 tv.setText(sb.toString());
                 break;
             case R.id.green_update_btn:
-                SQLiteUtils.getInstance().updateContacts(new User(null, "name1221", "sex", "22", "email"));
+                SQLiteUtils.getInstance().updateWhereAgeUser("33",new User(null, "name1221", "sex", "22", "email","des","10"));
                 break;
             case R.id.green_delete_btn:
-                SQLiteUtils.getInstance().deletewhereAge(new User());
+                SQLiteUtils.getInstance().deletewhereAge("12");
                 break;
         }
     }

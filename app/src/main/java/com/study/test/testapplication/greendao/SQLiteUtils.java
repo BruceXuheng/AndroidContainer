@@ -18,14 +18,11 @@ public class SQLiteUtils {
     private DaoSession daoSession;
     private DaoMaster.DevOpenHelper helper;
 
-
-
-
     private SQLiteUtils() {
         daoSession = MyApplication.getInstances().getDaoSession();
-        userEntityDao = daoSession.getUserDao();
-        QueryBuilder.LOG_VALUES=true;
-        QueryBuilder.LOG_SQL=true;
+        userEntityDao = daoSession.getUserDao();//获取User操作类
+        QueryBuilder.LOG_VALUES=true;//GreenDao Log开关
+        QueryBuilder.LOG_SQL=true;//GreenDao Log开关
     }
 
     public static SQLiteUtils getInstance() {
@@ -45,21 +42,22 @@ public class SQLiteUtils {
     }
 
     //删除
-    public void deleteContacts(User testBean) {
+    public void deleteUser(User testBean) {
         userEntityDao.delete(testBean);
     }
 
     //修改
-    public void updateContacts(User testBean) {
+    public void updateUsers(User testBean) {
         userEntityDao.update(testBean);
     }
 
     /**
-     * 条件搜索
+     * 根据年龄，修改数据
+     * @param age
      * @param user
      */
-    public void updateUser(User user){
-        daoSession.getDatabase().execSQL("update user set age=? where age=?and email=?",new Object[]{user.getAge(),"1","email"});
+    public void updateWhereAgeUser(String age,User user){
+        daoSession.getDatabase().execSQL("update user set age=? where age=?and email=?",new Object[]{age,user.getAge(),user.getEmail()});
     }
 
     //查询所有
@@ -67,6 +65,12 @@ public class SQLiteUtils {
         userEntityDao.detachAll();//清除缓存
         List<User> list1 = userEntityDao.loadAll();
         return list1 == null ? new ArrayList<User>() : list1;
+    }
+
+    //
+    public List<User> selectOrderAge() {
+        QueryBuilder<User> queryBuilder = userEntityDao.queryBuilder().orderAsc(UserDao.Properties.Sex);
+        return queryBuilder.list();
     }
 
     //条件查询
@@ -81,9 +85,12 @@ public class SQLiteUtils {
         userEntityDao.deleteAll();
     }
 
-    //删除表中内容
-    public void deletewhereAge(User user) {
-        daoSession.getDatabase().execSQL("delete from user where age=?",new Object[]{"10"});
+    /**
+     * 条件删除表中数据
+     * @param age [条件]
+     */
+    public void deletewhereAge(String age) {
+        daoSession.getDatabase().execSQL("delete from user where age = ?",new Object[]{age});
     }
 
     /**
