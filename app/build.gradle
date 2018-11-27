@@ -39,7 +39,16 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
 
+    //GreenDao 数据库
     implementation 'org.greenrobot:greendao:3.2.2'
     // 使用数据库升级辅助GreenDaoUpgradeHelper时添加
     implementation 'com.github.yuweiguocn:GreenDaoUpgradeHelper:v2.1.0'
+
+    //Android 轮播图 -- 【AndroidImageSilder】 框架
+//    implementation 'com.android.support:support-v4:+'
+    implementation 'com.squareup.picasso:picasso:2.3.2'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.daimajia.slider:library:1.1.5@aar'
+
+
 }

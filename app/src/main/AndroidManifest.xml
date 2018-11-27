@@ -16,11 +16,11 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".app.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:name=".app.MyApplication"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
         <activity
@@ -95,16 +95,20 @@
 
         <activity android:name=".servicedemo.DownActivity" />
         <activity android:name=".api.Main2Activity" />
-        <activity android:name=".mvpdemo.MvpActivity"></activity>
-        <!--<activity android:name=".mvpdemo.MVP2_Activity">-->
-           <!---->
-        <!--</activity>-->
+        <activity android:name=".mvpdemo.MvpActivity" />
+        <!-- <activity android:name=".mvpdemo.MVP2_Activity"> -->
+        <!--  -->
+        <!-- </activity> -->
         <activity android:name=".greendao.GreenDaoMainActivity">
+
+        </activity>
+        <activity android:name=".banner.androidimagesliding.BannerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 
